@@ -1,13 +1,11 @@
-# esbuild-react-chrome-extension
+# Twitter Sentiment Analysis Chrome Extension
 
-This is a boilerplate for chrome extensions writted in React and bundled with esbuild.
+What's the overall mood of your followers? How does a demographic generally feel about X? Recolored tweets based on general sentiment using distilbert embeddings.
 
-## Build
-
-```sh
-yarn build
-```
-
-## Scripts
-
-All scripts are bundled into the `public/build` folder.
+To run: 
+clone
+npm i
+npm run build
+chrome -> manage extensions -> add unpacked -> select public folder
+Visit twitter, click 'sus the vibes'
+Voila, there it is.
