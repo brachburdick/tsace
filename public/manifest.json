@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Esbuild-React-Extension",
+  "name": "TSACE",
   "version": "0.1.0",
-  "author": "Marton Lederer",
-  "description": "An example react-typescript extension with esbuild",
+  "author": "Brach Burdick",
+  "description": "Twiter Sentiment Analysis Chrome Extension",
   "permissions": [],
   "background": {
     "scripts": ["build/background.js"]
