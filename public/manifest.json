@@ -1,31 +1,38 @@
 {
-  "manifest_version": 2,
-  "name": "TSACE",
-  "version": "0.1.0",
-  "author": "Brach Burdick",
-  "description": "Twiter Sentiment Analysis Chrome Extension",
-  "permissions": [],
-  "background": {
-    "scripts": ["build/background.js"]
-  },
-  "icons": {
-    "192": "logo192.png",
-    "512": "logo512.png"
-  },
-  "browser_action": {
-    "default_icon": {
-      "192": "logo192.png",
-      "512": "logo512.png"
+    "manifest_version": 3,
+    "name": "extension",
+    "description": "TSACE | Twitter Sentiment Analysis Chrome Extension",
+    "version": "0.0.1",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "contextMenus",
+      "storage",
+      "unlimitedStorage",
+      "webNavigation"
+    ],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
     },
-    "default_title": "Popup",
-    "default_popup": "popup.html"
-  },
-  "web_accessible_resources": ["build/injected.js"],
-  "content_scripts": [
-    {
-      "matches": ["file://*/*", "http://*/*", "https://*/*"],
-      "js": ["build/content.js"],
-      "run_at": "document_end"
+    "content_scripts": [
+      {
+        "matches": [
+            "*://twitter.com/*"
+        ],
+        "js": [
+          "content.js"
+        ]
+      }
+    ],
+    "minimum_chrome_version": "92",
+    "action": {
+
+      "default_title": "TSACE.js",
+      "default_popup": "popup.html"
+    },
+    "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'"
     }
-  ]
-}
+
+  }
