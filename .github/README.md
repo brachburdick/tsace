@@ -12,4 +12,4 @@ chrome -> manage extensions -> add unpacked -> select build folder <br />
 Visit twitter, click 'sus the vibes' <br />
 Voila, there it is.<br />
 <br />
-Demo: https://www.loom.com/share/726035d5e83c42aa915369c2496e4f7a
+Demo: https://www.loom.com/share/527cf15e385b40d292508aa0ac335af5
