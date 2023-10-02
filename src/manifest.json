@@ -3,6 +3,10 @@
     "name": "Twitter Sentiment Analyzer",
     "version": "1.0",
     "permissions": ["storage", "activeTab", "webNavigation"],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
     "content_scripts": [{
       "matches": ["*://twitter.com/*"],
       "js": ["contentScript.js"]
