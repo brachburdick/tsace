@@ -1,4 +1,5 @@
 {
+
   "manifest_version": 3,
   "name": "extension",
   "description": "TSACE | Twitter Sentiment Analysis Chrome Extension",
@@ -19,6 +20,7 @@
     {
       "resources": ["xtremedistill-go-emotion-int8.onnx"],
       "matches": ["*://twitter.com/*"]
+
     }
   ],
 
