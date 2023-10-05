@@ -1,15 +1,25 @@
 {
-    "manifest_version": 3,
-    "name": "Twitter Sentiment Analyzer",
-    "version": "1.0",
-    "permissions": ["storage", "activeTab", "webNavigation"],
-    "background": {
-      "service_worker": "background.js",
-      "type": "module"
-    },
-    "content_scripts": [{
+  "manifest_version": 3,
+  "name": "Twitter Sentiment Analyzer",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "webNavigation",
+    "webRequest",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-eval'; object-src 'self';"
+  },
+  "content_scripts": [
+    {
       "matches": ["*://twitter.com/*"],
       "js": ["contentScript.js"]
-    }]
-  }
-  
+    }
+  ]
+}

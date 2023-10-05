@@ -33,10 +33,8 @@ export default function App() {
       ) : (
         <>
           <button onClick={handleClick}>Sus the vibes</button>
-          
         </>
       )}
     </div>
   );
 }
-
