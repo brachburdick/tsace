@@ -1,6 +1,7 @@
 # Twitter Sentiment Analysis Chrome Extension
 
 What's the overall mood of your followers? How does a demographic generally feel about ___? Recolored tweets based on general sentiment using distilbert embeddings. <br />
+NEW: Updated model for more accurate reading. Still needing refinement and more nuance in tweet reshading.
 <br />
 Coming soon: different embedding options, customizable sentiment color schemes, in-popup query refinement 
  <br />
