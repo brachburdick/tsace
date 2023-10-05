@@ -1,38 +1,39 @@
 {
-    "manifest_version": 3,
-    "name": "extension",
-    "description": "TSACE | Twitter Sentiment Analysis Chrome Extension",
-    "version": "0.0.1",
-    "permissions": [
-      "activeTab",
-      "scripting",
-      "contextMenus",
-      "storage",
-      "unlimitedStorage",
-      "webNavigation"
-    ],
-    "background": {
-      "service_worker": "background.js",
-      "type": "module"
-    },
-    "content_scripts": [
-      {
-        "matches": [
-            "*://twitter.com/*"
-        ],
-        "js": [
-          "content.js"
-        ]
-      }
-    ],
-    "minimum_chrome_version": "92",
-    "action": {
-
-      "default_title": "TSACE.js",
-      "default_popup": "popup.html"
-    },
-    "content_security_policy": {
-      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'"
+  "manifest_version": 3,
+  "name": "extension",
+  "description": "TSACE | Twitter Sentiment Analysis Chrome Extension",
+  "version": "0.0.1",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "storage",
+    "unlimitedStorage",
+    "webNavigation"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["xtremedistill-go-emotion-int8.onnx"],
+      "matches": ["*://twitter.com/*"]
     }
+  ],
 
+  "content_scripts": [
+    {
+      "matches": ["*://twitter.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "minimum_chrome_version": "92",
+  "action": {
+    "default_title": "TSACE.js",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'"
   }
+}
